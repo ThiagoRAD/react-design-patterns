@@ -1,13 +1,18 @@
+import { useState } from 'react'
 import './App.css'
 import {ControlledForm} from './ControlledForm';
-import {UncontrolledForm} from './UncontrolledForm';
+import { ControlledModal } from './ControlledModal'
 
 const App = () => {
+
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div>
-      <UncontrolledForm />
+      <ControlledModal shouldShow={showModal} onRequestClose={() => setShowModal(false)}>
+        <ControlledForm />
+      </ControlledModal>
       <hr />
-      <ControlledForm />
     </div>
   );
 };
