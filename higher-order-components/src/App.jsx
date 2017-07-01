@@ -1,10 +1,12 @@
+import { inLayout } from './inLayout'
 import {printProps} from './printProps';
 import {UserInfo} from './UserInfo';
+import { withUser } from './withUser'
 
 function App() {
-  const UserInfoWrapped = printProps(UserInfo);
+  const UserInfoWrapped = inLayout(withUser(printProps(UserInfo), 1));
 
-  return <UserInfoWrapped user={{id: 1, name: 'Black', hobbies: ['Reading', 'Traveling']}}></UserInfoWrapped>
+  return <UserInfoWrapped />
 }
 
 export default App;
