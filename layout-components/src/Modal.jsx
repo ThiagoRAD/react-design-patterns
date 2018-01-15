@@ -26,8 +26,9 @@ const Modal = ({ children }) => {
     <>
     <button onClick={() => setShouldShow(true)}>Show Modal</button>
     {shouldShow && (
-      <ModalBackground>
-        <ModalBody>
+      <ModalBackground onClick={() => setShouldShow(false)}>
+        <ModalBody onClick={e => e.stopPropagation()}>
+          <button onClick={() => setShouldShow(false)}>Hide Modal</button>
           {children}
         </ModalBody>
       </ModalBackground>
