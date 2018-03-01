@@ -61,7 +61,6 @@ app.get('/current-user', (req, res) => {
 app.get('/users/:id', (req, res) => {
 	const { id } = req.params;
 
-  console.log(id)
 	res.json(users.find(user => user.id == id));
 });
 
