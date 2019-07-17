@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { UserInfo } from './UserInfo'
 
 export const CurrentUserInfo = () => {
   const [user, setUser] = useState(null)
@@ -9,8 +10,8 @@ export const CurrentUserInfo = () => {
     (async () => {
       const response = await axios.get('/api/current-user')
       setUser(response.data)
-    })
+    })()
   }, [])
 
-  return <></>
+  return user && <UserInfo user={user} />
 }
