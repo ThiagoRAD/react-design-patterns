@@ -9,6 +9,7 @@ const App = () => {
 
   return (
     <div>
+      <button onClick={() => setShowModal(true)}>Show Modal</button>
       <ControlledModal shouldShow={showModal} onRequestClose={() => setShowModal(false)}>
         <ControlledForm />
       </ControlledModal>
