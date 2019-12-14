@@ -1,5 +1,13 @@
-export const UserInfo = ({ user }) => {
-	const { name, age, hairColor, hobbies } = user;
+import { useCurrentUser } from './useCurrentUser'
+
+export const UserInfo = () => {
+	const { user, isLoading } = useCurrentUser();
+  
+  if (isLoading) {
+    return <p>Loading user information...</p>;
+  }
+
+  const { name, age, hairColor, hobbies } = user;
 
 	return (
 		<>
