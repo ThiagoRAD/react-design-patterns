@@ -8,6 +8,18 @@ export const Button = ({size, color, text, ...props}) => {
   )
 }
 
+export const DangerButton = (props) => {
+  return <Button size="large" text={props.text} color="red" {...props} />
+}
+
+export const PartiallyApply = (Component, partialProps) => {
+  return props => {
+    return <Component {...partialProps} {...props} />
+  }
+}
+
+export const DangerButton2 = PartiallyApply(Button, {size: 'large', color: 'red'})
+
 function getPropertyWithDefault(key, defaultValue, obj) {
   if (key in obj) {
     return obj[key];
