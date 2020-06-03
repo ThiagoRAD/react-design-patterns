@@ -3,6 +3,7 @@
 ## Commonly used design patterns in react
 
 - Layout Components
+- Container Components
 
 ## To Create a Vite Project
 
