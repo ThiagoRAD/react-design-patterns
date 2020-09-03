@@ -11,9 +11,9 @@ const RightContainer = styled.div`
   height: 100vh;
 `;
 
-const LeftHandComponent = () => (
+const LeftHandComponent = ({message}) => (
   <LeftContainer>
-    <h1>Left</h1>
+    <h1>{message}</h1>
   </LeftContainer>
 );
 
@@ -27,9 +27,10 @@ const RightHandComponent = () => (
 function App() {
 
   return (
-    <>
-      <SplitScreen left={LeftHandComponent} leftWeight={1} right={RightHandComponent} rightWeight={2} />
-    </>
+      <SplitScreen leftWeight={1} rightWeight={2} >
+        <LeftHandComponent message="Left"/>
+        <RightHandComponent />
+      </SplitScreen>
   )
 }
 
