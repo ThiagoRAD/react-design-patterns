@@ -1,7 +1,13 @@
-import { UncontrolledForm } from './UncontrolledForm'
+import {ControlledForm} from './ControlledForm';
+import {UncontrolledForm} from './UncontrolledForm';
 
 const App = () => {
-  return <UncontrolledForm />
-}
+  return (
+    <>
+      <UncontrolledForm />
+      <ControlledForm />
+    </>
+  );
+};
 
-export default App
+export default App;
