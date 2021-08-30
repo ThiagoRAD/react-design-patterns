@@ -1,0 +1,17 @@
+import axios from 'axios'
+import { useEffect } from 'react'
+import { useState } from 'react'
+import { UserInfo } from './UserInfo'
+
+export const CurrentUserLoader = () => {
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    (async () => {
+      const response = await axios.get('/api/current-user')
+      setUser(response.data)
+    })()
+  }, [])
+
+  return user && <UserInfo user={user} />
+}
