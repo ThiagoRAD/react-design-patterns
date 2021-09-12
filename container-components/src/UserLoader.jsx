@@ -7,8 +7,6 @@ const UserLoader = ({ children, userId }) => {
   useEffect(() => {
     (async () => {
       const response = await axios.get(`/api/users/${userId}`)
-      console.log(response.data)
-      console.log(response)
       setUser(response.data)
     })()
   }, [userId])
