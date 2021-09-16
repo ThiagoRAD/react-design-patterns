@@ -5,7 +5,7 @@ export const withUser = (Component, userId) => {
     const [user, setUser] = useState(null)
 
     useEffect(() => {
-      setUser({ id: userId, name: 'User ' + userId, age: 20, hairColor: 'Black' })
+      setUser({ id: userId, name: 'User ' + userId, age: 20, hairColor: 'Black', hobbies: ['Reading', 'Traveling'] })
     }, [userId])
 
     return user && <Component {...props} user={user} />
