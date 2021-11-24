@@ -13,13 +13,13 @@ const RightContainer = styled.div`
 
 const LeftHandComponent = () => (
   <LeftContainer>
-    <h1>Left Side</h1>
+    <h1>Left</h1>
   </LeftContainer>
 );
 
 const RightHandComponent = () => (
   <RightContainer>
-    <h1>Right Side</h1>
+    <h1>Right</h1>
   </RightContainer>
 );
 
