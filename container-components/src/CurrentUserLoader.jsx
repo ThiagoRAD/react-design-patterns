@@ -1,6 +1,5 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useState } from 'react'
 
 export const CurrentUserLoader = ({children}) => {
   const [user, setUser] = useState(null)
@@ -12,7 +11,7 @@ export const CurrentUserLoader = ({children}) => {
     })()
   }, [])
 
-  return React.Children.map(children, child => {
+  return user && React.Children.map(children, child => {
     if(React.isValidElement(child)) {
       return React.cloneElement(child, { user })
     }
