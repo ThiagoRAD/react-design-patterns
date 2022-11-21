@@ -1,5 +1,7 @@
 import LargePersonListItem from './LargePersonListItem'
 import Modal from './Modal'
+import RegularList from './RegularList'
+import SplitScreen from './SplitScreen'
 
 const people = [{
 	name: 'John Doe',
@@ -41,7 +43,10 @@ function App() {
   return (
     <>
       <Modal>
-        <LargePersonListItem person={people[0]} />
+        <SplitScreen>
+          <h1>Left Side</h1>
+          <RegularList items={people} resourceName="person" itemComponent={LargePersonListItem} />
+        </SplitScreen>
       </Modal>
     </>
   )
