@@ -1,4 +1,3 @@
-import './App.css'
 import SplitScreen from './SplitScreen'
 import styled from 'styled-components';
 
