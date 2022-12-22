@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 export const ControlledForm = () => {
   const [name, setName] = useState('');
-  const [age, setAge] = useState();
+  const [age, setAge] = useState('');
   const [hairColor, setHairColor] = useState('#000000');
 
   const handleSubmit = (event) => {
