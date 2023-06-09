@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -21,10 +20,5 @@ const SplitScreen = ({ left: Left, right: Right}) => {
   </Container>
   )
 }
-
-SplitScreen.propTypes = {
-  left: PropTypes.elementType.isRequired,
-  right: PropTypes.elementType.isRequired,
-};
 
 export default SplitScreen;
