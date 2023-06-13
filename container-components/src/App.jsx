@@ -1,4 +1,5 @@
 import {CurrentUserLoader} from './CurrentUserLoader';
+import ResourceLoader from './ResourceLoader'
 import {UserInfo} from './UserInfo';
 import UserLoader from './UserLoader';
 
@@ -8,9 +9,12 @@ function App() {
       {/* <CurrentUserLoader>
         <UserInfo />
       </CurrentUserLoader> */}
-      <UserLoader userId={1}>
+      {/* <UserLoader userId={1}>
         <UserInfo />
-      </UserLoader>
+      </UserLoader> */}
+      <ResourceLoader resourceUrl="/api/users/1" resourceName="user">
+        <UserInfo />
+      </ResourceLoader>
     </>
   );
 }
