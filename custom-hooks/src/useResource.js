@@ -6,7 +6,7 @@ export const useResource = (url, defaultValue = null) => {
 
   useEffect(() => {
     console.log('Loading data from ', url, '...');
-    // Simulate fetching user data
+    // Simulate fetching resource data
     const fetchResource = () => {
       return {
         name: 'John Doe',
