@@ -10,6 +10,9 @@ const getServerData = url => async () => {
   return response.data;
 }
 
+const getTestData = async () => {
+  return {name: 'Test User', age: 30, hairColor: 'brown', hobbies: ['reading', 'gaming']};
+}
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
         <UserInfo />
       </ResourceLoader>
       <DataLoader resourceName="user" getData={getServerData('/api/users/1')}>
+        <UserInfo />
+      </DataLoader>
+      <DataLoader resourceName="user" getData={getTestData}>
         <UserInfo />
       </DataLoader>
     </>
