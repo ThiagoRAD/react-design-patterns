@@ -1,3 +1,5 @@
+import { RecursiveComponent } from './RecursiveComponent'
+
 const nestedObject = {
 	a: 1,
 	b: {
@@ -21,7 +23,7 @@ const nestedObject = {
 }
 
 const App = () => {
-
+  return <RecursiveComponent data={nestedObject} />
 }
 
 export default App;
