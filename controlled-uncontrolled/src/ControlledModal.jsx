@@ -20,20 +20,14 @@ const ModalBody = styled.div`
   border-radius: 8px;
 `
 
-export const ControlledModal = ({ children }) => {
-  const [shouldShow, setShouldShow] = useState(false)
-  return (
-    <>
-    <button onClick={() => setShouldShow(true)}>Show Modal</button>
-    {shouldShow && (
-      <ModalBackground onClick={() => setShouldShow(false)}>
+export const ControlledModal = ({ children, shouldShow, onRequestClose }) => {
+  return shouldShow && (
+      <ModalBackground onClick={onRequestClose}>
         <ModalBody onClick={e => e.stopPropagation()}>
-          <button onClick={() => setShouldShow(false)}>Hide Modal</button>
+          <button onClick={onRequestClose}>Hide Modal</button>
           {children}
         </ModalBody>
       </ModalBackground>
-    )}
-    </>
-  );
+    );
 }
 
